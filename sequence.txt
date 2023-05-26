@@ -1,0 +1,40 @@
+title House of Humus
+
+participant Main.js
+
+participant FoodTruck.js
+participant Entree.js
+participant Vegetable.js
+participant SideDishes.js
+participant transientState.js
+participant Sales.js
+participant API
+
+
+Entree.js<-API:Here is the entree state
+FoodTruck.js<-Entree.js:Function - Loop through the entrees and post the names as radio buttons
+API->Vegetable.js: Here is the vegetable state
+Vegetable.js->FoodTruck.js:Function - Loop through the vegetables and post the names as radio buttons
+API->SideDishes.js: Here is the sideDishes state
+SideDishes.js->FoodTruck.js:Function - Loop through the sideDishes and post the names as radio buttons
+Sales.js->FoodTruck.js: Here is a purchaseCombo button
+API->Sales.js: Here is the purchases state
+Sales.js->FoodTruck.js: Function - loop through the receipts to add up a price per combo and display them as HTML
+transientState.js->Sales.js: Here is default transientState and functions to change it when the radio buttons are clicked.
+transientState.js->Sales.js: Here is a function to reset the transientState when it is changed. 
+Sales.js->FoodTruck.js: Here is the functions and clickEvents to save the transientState to the API
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
